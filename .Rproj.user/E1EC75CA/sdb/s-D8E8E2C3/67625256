@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "buildTree = function(modelName, modelData, modelVersion = 1){\n  if(any(is.na(modelVersion))){\n    modelVersion = 1;\n  }\n  if(\n    nrow(predictors[model == modelName]) == 0 || \n    nrow(predictors[model == modelName & version == modelVersion]) == 0 || \n    nrow(responses[model == modelName]) == 0 ||\n    nrow(formulas[model == modelName]) == 0 ||\n    nrow(formulas[model == modelName & version == modelVersion]) == 0\n  ){\n    warning(paste0('Error: predictors and/or response and/or formula variable not found for ', modelName, ' version: ', modelVersion));\n  } else {\n    predictorVector = predictors$predictor[predictors$model == modelName & predictors$version == modelVersion];\n    responseVar = responses$response[responses$model == modelName];\n    formulaVar = as.formula(formulas$formula[formulas$model == modelName & formulas$version == modelVersion]);\n    DT = get(modelData, envir = dataEnv);\n    responseVector = DT[[responseVar]];\n    responseFamily = {\n      if(is.numeric(responseVector)) {\n        if(countUnique(responseVector) > 2) {\n          'gaussian';\n        } else {\n          'bernoulli';\n        }\n      } else {\n        if(is.character(responseVector)) {\n          if(countUnique(responseVector) > 2) {\n            'multinomial';\n          } else {\n            'bernoulli';\n          }\n        } else {\n          message('Cannnot determine type of response variable.  Please ensure response is numeric, binomial, or multinomial.');\n          NA;\n        }\n      }\n    }\n    if(is.na(responseFamily)) {\n      return(message('Cannnot determine type of response variable.  Please ensure response is numeric, binomial, or multinomial.'));\n    }\n    else{\n      depth = length(predictorVector) - 1;\n      nTrees = round(length(responseVector) / 100, 0) + 1;\n      assign(modelName, gbm(formulaVar, data = DT, interaction.depth = depth, n.trees = nTrees, distribution = responseFamily), envir = modelEnv);\n    }\n  }\n}",
+    "created" : 1556913257037.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "672988412",
+    "id" : "67625256",
+    "lastKnownWriteTime" : 1557074473,
+    "last_content_update" : 1557074473598,
+    "path" : "~/WIP/Functions/buildTree.R",
+    "project_path" : "Functions/buildTree.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

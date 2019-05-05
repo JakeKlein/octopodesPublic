@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "modelPredict = function(modelName, testData, modelVersion = 1){\n  #Get model predictions\n  #Add to model environment\n  #Return results\n}",
+    "created" : 1557076651811.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "573949705",
+    "id" : "44309399",
+    "lastKnownWriteTime" : 1557076739,
+    "last_content_update" : 1557076739588,
+    "path" : "~/WIP/Functions/modelPredict.R",
+    "project_path" : "Functions/modelPredict.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 15,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "assignResponse = function(modelName, response){\n  model = modelName;\n  return(data.table(model, response));\n}\n\naddResponse = function(responseObject){\n  responses <<- responses[model != responseObject$model];\n  responses <<- rbind2(responses, responseObject);\n}",
+    "created" : 1556895811320.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4202044646",
+    "id" : "C97AF6F4",
+    "lastKnownWriteTime" : 1556893955,
+    "last_content_update" : 1556893955,
+    "path" : "~/WIP/Functions/assignResponse.R",
+    "project_path" : "Functions/assignResponse.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "trainTest = function(data, ratio = 0.5){\n  #Function to split data into train and test sets\n}",
+    "created" : 1557076391774.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3664805339",
+    "id" : "5BCB14E3",
+    "lastKnownWriteTime" : 1557076634,
+    "last_content_update" : 1557076634233,
+    "path" : "~/WIP/Functions/trainTest.R",
+    "project_path" : "Functions/trainTest.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

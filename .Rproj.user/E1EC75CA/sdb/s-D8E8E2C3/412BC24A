@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "dependencies = c(\"data.table\", \"gbm\", \"devtools\");\n\nfor(i in 1:length(dependencies)){\n  loader(dependencies[i]);\n}",
+    "created" : 1556915726219.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "169957464",
+    "id" : "412BC24A",
+    "lastKnownWriteTime" : 1556916546,
+    "last_content_update" : 1556916546713,
+    "path" : "~/WIP/Dependencies/loadDependencies.R",
+    "project_path" : "Dependencies/loadDependencies.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

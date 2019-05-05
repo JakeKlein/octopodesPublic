@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "modelSummary = function(modelName, modelVersionn = 1){\n  #Return model information\n}",
+    "created" : 1557076391577.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3777512822",
+    "id" : "527BC065",
+    "lastKnownWriteTime" : 1557076584,
+    "last_content_update" : 1557076584479,
+    "path" : "~/WIP/Functions/modelSummary.R",
+    "project_path" : "Functions/modelSummary.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

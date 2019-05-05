@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "buildFormula = function(modelName, modelVersion = 1){\n  if(any(is.na(modelVersion))){\n    modelVersion = 1;\n  }\n  if(nrow(predictors[model == modelName]) == 0 || nrow(predictors[model == modelName & version == modelVersion]) == 0 || nrow(responses[model == modelName]) == 0){\n    warning(paste0('Error: predictors and/or response variable not found for ', modelName, ' version: ', modelVersion));\n  } else {\n    predictorVector = predictors$predictor[predictors$model == modelName & predictors$version == modelVersion];\n    responseVar = responses$response[responses$model == modelName];\n    formulaString = paste0(responseVar, ' ~ ');\n    for(i in 1:(length(predictorVector) - 1)){\n      formulaString = paste0(formulaString, predictorVector[i], ' + ');\n    }\n    formulaString = as.character(paste0(formulaString, predictorVector[length(predictorVector)]));\n    return(data.table(model = modelName, version = modelVersion, formula = formulaString));\n  }\n}\n\naddFormula = function(formulaObject){\n  formulas <<- formulas[!(model == formulaObject$model & version == formulaObject$version)];\n  formulas <<- rbind2(formulas, formulaObject);\n}",
+    "created" : 1556756617414.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "936610644",
+    "id" : "9ED4B23F",
+    "lastKnownWriteTime" : 1556895786,
+    "last_content_update" : 1556895786039,
+    "path" : "~/WIP/Functions/addFormula.R",
+    "project_path" : "Functions/addFormula.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "clearConsole = function(){\n  cat(\"\\014\");\n}",
+    "created" : 1557076251122.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "77031872",
+    "id" : "EA4AAC87",
+    "lastKnownWriteTime" : 1557076263,
+    "last_content_update" : 1557076263076,
+    "path" : "~/WIP/Functions/clearConsole.R",
+    "project_path" : "Functions/clearConsole.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

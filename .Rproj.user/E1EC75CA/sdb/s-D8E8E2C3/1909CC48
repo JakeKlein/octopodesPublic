@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "safeCast <- function(object, Class = 'numeric') {\n  suppressWarnings(\n    if(is.na(as(object, Class))){\n      #print(paste('Could not coerce ', object, ' to type ', Class));\n      return(object);\n    } else {\n      return(as(object, Class));\n    }\n  )\n}",
+    "created" : 1554672566298.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3129716075",
+    "id" : "1909CC48",
+    "lastKnownWriteTime" : 1554674407,
+    "last_content_update" : 1554674407931,
+    "path" : "~/WIP/Functions/safeCast.R",
+    "project_path" : "Functions/safeCast.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

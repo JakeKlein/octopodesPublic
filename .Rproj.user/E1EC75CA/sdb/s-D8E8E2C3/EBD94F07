@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "exec <- function(x)return(eval(parse(text = x)))\n",
+    "created" : 1556131175334.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2255060778",
+    "id" : "EBD94F07",
+    "lastKnownWriteTime" : 1556136388,
+    "last_content_update" : 1556136388322,
+    "path" : "~/WIP/Functions/exec.R",
+    "project_path" : "Functions/exec.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "assignModel = function(modelName, modelData, modelVersion = 1) {\n  if(any(is.na(modelVersion))){\n    modelVersion = 1;\n  }\n  predictorVector = paste0(\"[\", paste(predictors$predictor[predictors$model == modelName & predictors$version == modelVersion], collapse = ', '), \"]\");\n  responseVar = responses$response[responses$model == modelName];\n  formulaVar = formulas$formula[formulas$model == modelName & formulas$version == modelVersion];\n  return(data.table(model = modelName, version = modelVersion, data = modelData, response = responseVar, predictors = predictorVector, formula = formulaVar));\n}\n\naddModel = function(modelObject) {\n  models <<- models[!(model == modelObject$model & version == modelObject$version)];\n  models <<- rbind2(models, modelObject);\n}",
+    "created" : 1557075203648.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "65739465",
+    "id" : "F60D2FBA",
+    "lastKnownWriteTime" : 1557076062,
+    "last_content_update" : 1557076062407,
+    "path" : "~/WIP/Functions/addModel.R",
+    "project_path" : "Functions/addModel.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

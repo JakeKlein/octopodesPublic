@@ -1,0 +1,1 @@
+getPath = function()print(getwd());

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "assignPredictors = function(modelName, predictorList){\n  version = if(nrow(predictors[model == modelName]) == 0){ 1 }else{ max(predictors$version[predictors$model == modelName]) + 1};\n  model = modelName;\n  predictor = predictorList;\n  return(data.table(model, version, predictor));\n}\n\naddPredictors = function(predictorObject){\n  predictors <<- rbind2(predictors, predictorObject);\n}",
+    "created" : 1556894788653.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "330872278",
+    "id" : "A9D866CE",
+    "lastKnownWriteTime" : 1556893936,
+    "last_content_update" : 1556893936,
+    "path" : "~/WIP/Functions/assignPredictors.R",
+    "project_path" : "Functions/assignPredictors.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

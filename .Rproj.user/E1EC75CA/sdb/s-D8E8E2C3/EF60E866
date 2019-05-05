@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "###Create list metadata function\nlistMetaData = function(collection, modelName = NULL, modelVersion = NULL){\n  if(any(is.na(modelName))){\n    modelName <- NULL\n  };\n  if(any(is.na(modelVersion))){\n    modelVersion <- NULL\n  };\n  if(is.null(modelName)){\n    print(exec(collection));\n  }\n  else {\n    subset = ifelse(\n      is.null(modelVersion),\n      paste0(\"model == '\", modelName, \"'\"),\n      paste0(\"model == '\", modelName, \"' & version == '\", modelVersion, \"'\")\n    )\n    print(exec(collection)[eval(parse(text = subset))]);\n  }\n}\n",
+    "created" : 1556894297837.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2863910234",
+    "id" : "EF60E866",
+    "lastKnownWriteTime" : 1556136268,
+    "last_content_update" : 1556136268,
+    "path" : "~/WIP/Functions/listMetaData.R",
+    "project_path" : "Functions/listMetaData.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
