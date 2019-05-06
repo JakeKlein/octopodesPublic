@@ -14,13 +14,15 @@ for (i in 1:length(list.files(dependenciesPath)))source(file.path(dependenciesPa
 dataPath = file.path(path, 'Data');
 if(!exists('dataEnv')) dataEnv = new.env();
 data = list.files(dataPath, pattern = '*.csv');
-for (i in 1:length(data)) {
-  fileName = data[i];
-  fileNameClean = strsplit(fileName, split = '[.]')[[1]][1];
-  dataFilePath = file.path(dataPath, data[i]);
-  assign(fileNameClean, fread(dataFilePath), envir = dataEnv);
-  rm(dataFilePath);
-}
+if(length(data) > 0) {
+  for (i in 1:length(data)) {
+    fileName = data[i];
+    fileNameClean = strsplit(fileName, split = '[.]')[[1]][1];
+    dataFilePath = file.path(dataPath, data[i]);
+    assign(fileNameClean, fread(dataFilePath), envir = dataEnv);
+    rm(dataFilePath);
+  }
+};
 ##MetaData
 metaDataFields = c('predictors', 'responses', 'models', 'functions', 'data', 'commands', 'formulas');
 if(!exists('predictors')) predictors = data.table(model = character(), version = integer(), predictor = character());
