@@ -3,8 +3,8 @@ buildTree = function(modelName, modelData, modelVersion = 1){
     modelVersion = 1;
   }
   if(
-    nrow(predictors[model == modelName]) == 0 || 
-    nrow(predictors[model == modelName & version == modelVersion]) == 0 || 
+    nrow(predictors[model == modelName]) == 0 ||
+    nrow(predictors[model == modelName & version == modelVersion]) == 0 ||
     nrow(responses[model == modelName]) == 0 ||
     nrow(formulas[model == modelName]) == 0 ||
     nrow(formulas[model == modelName & version == modelVersion]) == 0
@@ -42,7 +42,7 @@ buildTree = function(modelName, modelData, modelVersion = 1){
     else{
       depth = length(predictorVector) - 1;
       nTrees = round(length(responseVector) / 100, 0) + 1;
-      assign(modelName, gbm(formulaVar, data = DT, interaction.depth = depth, n.trees = nTrees, distribution = responseFamily), envir = modelEnv);
+      assign(paste0(modelName, '_', modelVersion), gbm(formulaVar, data = DT, interaction.depth = depth, n.trees = nTrees, distribution = responseFamily), envir = modelEnv);
     }
   }
 }
