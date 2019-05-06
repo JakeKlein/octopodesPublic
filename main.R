@@ -1,5 +1,5 @@
 ###Set Directory
-setwd('/Users/jakeklein/WIP');
+setwd('~/octopodes');
 path = getwd();
 ###Functions
 functionsPath = file.path(path,'Functions');
@@ -27,7 +27,7 @@ if(!exists('predictors')) predictors = data.table(model = character(), version =
 if(!exists('responses')) responses = data.table(model = character(), response = character());
 if(!exists('formulas')) formulas = data.table(model = character(), version = integer(), formula = character());
 if(!exists('models')) models = data.table(model = character(), version = integer(), data = character(), response = character(), predictors = character(), formula = character());
-#if(!exists('commands')) commands = 
+#if(!exists('commands')) commands =
 functions = lsf.str();
 
 
@@ -71,7 +71,7 @@ for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, li
       collection = inputSplitSpace[2];
       modelName = inputSplitSpace[3];
       modelVersion = inputSplitSpace[4];
-      if(!collection %in% metaDataFields){ 
+      if(!collection %in% metaDataFields){
         message(paste0(collection, " not valid option for 'list' method"));
         next;
       } else{
@@ -91,11 +91,11 @@ for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, li
         if(is.na(model) || is.na(predictor)){
           message("Error: Invalid option for 'predictor' method. Either 'model' or 'predictor' arg incorrect");
           next;
-        } else { 
+        } else {
           addPredictors(assignPredictors(model, predictor));
           next;
         }
-    } 
+    }
     if(
       command == 'response'
     ) {
@@ -108,7 +108,7 @@ for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, li
       if(is.na(model) || is.na(response)){
         message("Invalid option for 'response' method. Either 'model' or 'response' arg incorrect");
         next;
-      } else { 
+      } else {
         addResponse(assignResponse(model, response));
         next;
       }
@@ -145,7 +145,7 @@ for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, li
       if(is.na(model)){
         message("Invalid option for 'formula' method. modelName arg incorrect.");
         next;
-      } else { 
+      } else {
         addFormula(buildFormula(model, version));
         next;
       }
