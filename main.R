@@ -129,7 +129,7 @@ for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, li
           if(!dataFiles[i] %in% data) {
             data = append(data, dataFiles[i]);
             fileNameClean = strsplit(dataFiles[i], split = '[.]')[[1]][1];
-            assign(dataFiles[i], fread(file.path(dataPath, fileNameClean)), envir = dataEnv);
+            assign(fileNameClean, fread(file.path(dataPath, dataFiles[i])), envir = dataEnv);
           }
         }
         next;
