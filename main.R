@@ -168,8 +168,33 @@ for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, li
       } else {
         buildTree(model, trainData, version);
         addModel(assignModel(model, trainData, version));
+        next;
       }
     }
-    else exec(input);
+    if(
+      command == 'summary'
+    ) {
+      if(inputLength > 3) {
+        message(paste0("Error: 'summary' method expects 2 arguments but received ", inputLength - 1, ". Passable arguments are modelName (required) and modelVersion (optional)."));
+        next;
+      }
+      model = inputSplitSpace[2];
+      version = inputSplitSpace[3];
+      if(is.na(model)) {
+        message("Invalid option for 'summary' method. modelName arg incorrect.");
+        next;
+      } else {
+        modelSummary(model, version);
+        next;
+      }
+    }
+    else {
+      tryCatch(
+        exec(input),
+        error = function(cond){
+          message(paste0("Error: Invalid command. '", command, "' not valid input."))
+        }
+      )
+    }
   }
 }
