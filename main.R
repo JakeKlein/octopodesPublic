@@ -46,7 +46,8 @@ run = TRUE;
 
 for (i in 1:length(list.files(functionsPath)))source(file.path(functionsPath, list.files(functionsPath)[i]));
 
-
+print("Welcome to Octopodes, the interactive Data Science Shell.");
+print("Shell Yeah!");
 {
   while(run == TRUE){
     input = readline(prompt = ' >> ');
