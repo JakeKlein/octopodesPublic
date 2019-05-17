@@ -189,9 +189,21 @@ print("Shell Yeah!", quote = FALSE);
         next;
       }
     }
+    if(
+      grepl('=', input)
+    ) {
+      inputSplitEquals = strsplit(input, '=')[[1]];
+      var = inputSplitEquals[1];
+      val = safeCast(gsub("'", '', inputSplitEquals[2]));
+      assignment(var, val);
+      next;
+    }
     else {
       tryCatch(
-        exec(input),
+        eval(parse(text = input)),
+        warning = function(cond){
+          message(cond);
+        },
         error = function(cond){
           message(paste0("Error: Invalid command. '", command, "' not valid input."))
         }

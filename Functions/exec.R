@@ -1,1 +1,1 @@
-exec <- function(x)return(eval(parse(text = x)))
+exec <- function(x)return(eval(parse(text = x)));
