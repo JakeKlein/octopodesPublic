@@ -190,7 +190,24 @@ print("Shell Yeah!", quote = FALSE);
       }
     }
     if(
-      grepl('=', input)
+      command == 'traintest'
+    ) {
+      if(inputLength > 3) {
+        message(paste0("Error: 'trainTest' method expects 2 arguments but received ", inputLength - 1, ". Passable arguments are data (required) and trainingRatio (optional)."));
+        next;
+      }
+      dataSet = inputSplitSpace[2];
+      ratio = safeCast(inputSplitSpace[3]);
+      if(!is.na(ratio) & (ratio > 1 || ratio < 0)) {
+        message("Error: ratio must be between 0 and 1.")
+        next;
+      } else {
+        trainTest(dataSet, ratio);
+        next;
+      }
+    }
+    if(
+      grepl('=', input) & !grepl('print', input)
     ) {
       inputSplitEquals = strsplit(input, '=')[[1]];
       var = inputSplitEquals[1];
