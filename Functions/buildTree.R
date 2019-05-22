@@ -41,7 +41,7 @@ buildTree = function(modelName, modelData, modelVersion = 1){
     }
     else{
       depth = length(predictorVector) - 1;
-      nTrees = round(length(responseVector) / 100, 0) + 1;
+      nTrees = 100 + round(length(responseVector) / 100, 0) + 1;
       name = paste0(modelName, '_V', modelVersion)
       print(paste0("Writing a ", responseFamily, " boosted tree model with ", nTrees, " trees."));
       assign(name, gbm(formulaVar, data = DT, interaction.depth = depth, n.trees = nTrees, distribution = responseFamily), envir = modelEnv);
