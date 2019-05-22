@@ -1,5 +1,11 @@
-###Set Directory
-setwd('~/octopodes');
+###Get Directory
+directory = if(
+  grepl('Public', getwd())
+) {
+    return('~/octopodesPublic');
+  } else {
+    return('~/octopodes');
+  };
 path = getwd();
 ###Functions
 functionsPath = file.path(path,'Functions');
